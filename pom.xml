@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+
+    <groupId>com.lianekai.myblog</groupId>
+    <artifactId>myblog-springboot</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <!--管理一些统一版本的属性变量-->
+    <properties>
+        <revision>1.0-SNAPSHOT</revision>
+        <mysql.version>8.0.11</mysql.version>
+        <lek.excel.version>${revision}</lek.excel.version>
+        <guava.version>29.0-jre</guava.version>
+        <easyexcel.version>2.2.6</easyexcel.version>
+        <lang3.version>3.4</lang3.version>
+        <swagger.version>1.5.22</swagger.version>
+        <transmittable.version>2.12.1</transmittable.version>
+    </properties>
+
+    <!--dependencyManagement元素提供了一种管理依赖版本号的方式。在dependencyManagement元素中声明所依赖的jar包的版本号等信息，
+ 那么所有子项目再次引入此依赖jar包时则无需显式的列出版本号。Maven会沿着父子层级向上寻找拥有dependencyManagement 元素的项目，然后使用它指定的版本号。-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>2.1.6.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!--SpringBoot Web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--SpringBoot Test-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>${easyexcel.version}</version><!--todo 从dependency中获取-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/transmittable-thread-local -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+            <version>${transmittable.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+
+        <!--导出相关-->
+        <!-- https://mvnrepository.com/artifact/org.apache.bcel/bcel -->
+        <dependency>
+            <groupId>org.apache.bcel</groupId>
+            <artifactId>bcel</artifactId>
+            <version>6.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--add by lianyikai  用作导出添加水印的依赖-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>ooxml-schemas</artifactId>
+            <exclusions>
+                <!--去掉poi-xmlbeans的依赖,使其与easyexcel中的版本一致 -->
+                <exclusion>
+                    <groupId>org.apache.xmlbeans</groupId>
+                    <artifactId>xmlbeans</artifactId>
+                </exclusion>
+            </exclusions>
+            <version>1.4</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
