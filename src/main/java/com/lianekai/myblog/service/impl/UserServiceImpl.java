@@ -20,18 +20,19 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    @SysLog(bizType = "登录",type = OperationTypeEnum.LOGIN)
+    @SysLog(bizType = "登录", type = OperationTypeEnum.LOGIN)
     public Boolean login(UserDTO userDTO) {
-        String name=userDTO.getName();
-        log.info(name+"进行了登录");
+        String name = userDTO.getName();
+        log.info(name + "进行了登录");
         return Boolean.TRUE;
     }
 
     @Override
-    @SysLog(bizType = "登出",type = OperationTypeEnum.LOGOUT)
+    @SysLog(bizType = "登出", type = OperationTypeEnum.LOGOUT)
     public Boolean logout(UserDTO userDTO) {
-        String name=userDTO.getName();
-        log.info(name+"退出了登录");
+        String name = userDTO.getName();
+        log.info(name + "退出了登录");
         return Boolean.TRUE;
     }
+
 }

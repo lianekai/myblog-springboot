@@ -13,7 +13,6 @@
     <groupId>com.lianekai.myblog</groupId>
     <artifactId>myblog-springboot</artifactId>
     <version>${revision}</version>
-    <packaging>pom</packaging>
 
     <!--管理一些统一版本的属性变量-->
     <properties>
