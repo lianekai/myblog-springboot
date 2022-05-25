@@ -1,0 +1,12 @@
+Spring 中BeanFactory 和FactoryBean的区别:
+BeanFactory : 在Spring中，最重要之一的就是IOC容器，它是用来管理Bean的，它是一个单例对象，它是一个接口，它的实现类是DefaultListableBeanFactory。
+保存了所有需要对外提供的Bean的信息，包括Bean的名称、类型、初始化方法、属性等等（也就是Bean实例）。对外暴露的是ApplicationContext接口，做为IOC容器最重要的一个接口，就是实现了BeanFactory接口。
+名字上他就是一个负责生产bean实例的Factory,是IOC容器的顶级接口，最基础的实现，同是也是访问Spring的跟接口，主要负责的是Bean 的创建和访问，有一个最常用的方法getBean()。同时也会去完成对Bean的依赖注入。
+总结：1BeanFactory 保存了对外提供的Bean的实例
+     2 容器的顶级接口，是Ioc最基础的实现
+    3 完成对Bean的依赖注入
+
+1 FactoryBean是一个接口，它的子接口有两个：BeanFactoryPostProcessor和FactoryBean。
+2 BeanFactoryPostProcessor是一个接口，它的子接口有两个：BeanPostProcessor和BeanFactoryPostProcessor。
+3 BeanPostProcessor是一个接口，它的子接口有两个：BeanPostProcessor和BeanPostProcessor。
+4 BeanFactoryPostProcessor是一个接口，它的子接口有两个：BeanPostProcessor和BeanFactoryPostProcessor。

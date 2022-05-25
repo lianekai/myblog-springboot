@@ -22,7 +22,7 @@ public class AsyncConfiguration {
     @Bean("asyncExecutor")
     public Executor asyncExecutor() {
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("asyncExecutor-%d").build();
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2, 60,
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 60,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(2048), threadFactory, new ThreadPoolExecutor.AbortPolicy());
         return TtlExecutors.getTtlExecutorService(threadPoolExecutor);
     }

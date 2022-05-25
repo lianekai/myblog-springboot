@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,7 +25,14 @@
         <lang3.version>3.4</lang3.version>
         <swagger.version>1.5.22</swagger.version>
         <transmittable.version>2.12.1</transmittable.version>
+        <mysql.version>8.0.21</mysql.version>
     </properties>
+
+    <modules>
+        <module>myblog-api</module>
+        <module>myblog-client</module>
+        <module>myblog-provider</module>
+    </modules>
 
     <!--dependencyManagement元素提供了一种管理依赖版本号的方式。在dependencyManagement元素中声明所依赖的jar包的版本号等信息，
  那么所有子项目再次引入此依赖jar包时则无需显式的列出版本号。Maven会沿着父子层级向上寻找拥有dependencyManagement 元素的项目，然后使用它指定的版本号。-->
@@ -50,6 +58,25 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+
+        <!--SpringBoot Redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--SpringBoot quartz-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
 
         <dependency>
@@ -121,6 +148,8 @@
             </exclusions>
             <version>1.4</version>
         </dependency>
+
+
     </dependencies>
 
     <build>

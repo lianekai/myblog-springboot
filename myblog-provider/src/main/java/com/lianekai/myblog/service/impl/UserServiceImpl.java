@@ -4,7 +4,6 @@ import com.lianekai.myblog.annotation.SysLog;
 import com.lianekai.myblog.common.OperationTypeEnum;
 import com.lianekai.myblog.pojo.dto.UserDTO;
 import com.lianekai.myblog.service.UserService;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

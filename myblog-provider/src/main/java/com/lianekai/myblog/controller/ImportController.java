@@ -1,4 +1,4 @@
 package com.lianekai.myblog.controller;
 
-public class ExcelController {
+public class ImportController {
 }

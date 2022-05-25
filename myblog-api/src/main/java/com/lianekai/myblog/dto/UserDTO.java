@@ -1,4 +1,4 @@
-package com.lianekai.myblog.pojo.dto;
+package com.lianekai.myblog.dto;
 
 import lombok.Getter;
 import lombok.Setter;
