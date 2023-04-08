@@ -21,4 +21,6 @@ public @interface SysLog {
 
     /**操作类型记录枚举*/
     OperationTypeEnum type();
+
+
 }

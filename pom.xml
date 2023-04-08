@@ -52,22 +52,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <!--SpringBoot Test-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
-
-
         <!--SpringBoot Redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -93,7 +89,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
-            <version>${easyexcel.version}</version><!--todo 从dependency中获取-->
+            <version>${easyexcel.version}</version>
         </dependency>
 
         <dependency>
@@ -114,15 +110,7 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>2.2.2</version>
-        </dependency>
-
-
-        <!--导出相关-->
+        <!--出相关-->
         <!-- https://mvnrepository.com/artifact/org.apache.bcel/bcel -->
         <dependency>
             <groupId>org.apache.bcel</groupId>
